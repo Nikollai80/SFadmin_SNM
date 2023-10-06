@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Update apt cache and make sure Posfix is installed
+      apt:
+        name: postfix
+        update_cache: yes

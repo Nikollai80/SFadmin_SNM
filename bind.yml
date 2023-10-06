@@ -1,0 +1,9 @@
+---
+
+- hosts: servers
+  become: true
+  become_method: sudo
+  become_user: root
+  remote_user: nikollai
+  roles:
+    - Bind

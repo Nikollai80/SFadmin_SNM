@@ -1,0 +1,8 @@
+---
+- hosts: servers2
+  become: yes
+  tasks:
+    - name: Update apt cache and make sure Posfix is installed
+      apt:
+        name: elasticsearch
+        update_cache: yes

@@ -1,0 +1,13 @@
+---
+# tasks file for Bind
+- name: Install Bind on Debian Family
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+   - bind9
+   - dnsutils
+  when:
+    ansible_os_family == "Debian"
+  notify:
+    - bind systemd
